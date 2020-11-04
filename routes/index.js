@@ -8,8 +8,12 @@ router.use(bodyParser());
 
 /* GET home page. */
 router.post('/', async (req, res, next) => {
-	console.log(req)
-	await callSendAPI(req.body)
+	console.log(req.body)
+	try {
+		await callSendAPI(req.body)
+	} catch(e){
+		console.log(e)
+	}
   	res.status(200);
 });
 

@@ -13,24 +13,24 @@ router.post('/', function(req, res, next) {
 
 
 
-function callSendAPI(messageData, callback) {
-	const messageData = {
-		"channel": "",
-		"text": "Hello world"
-	}
+// function callSendAPI(messageData, callback) {
+// 	const messageData = {
+// 		"channel": "",
+// 		"text": "Hello world"
+// 	}
+// z
+// 	request({
+// 		uri: 'https://slack.com/api/chat.postMessage',
+// 		qs: { access_token: token },
+// 		method: 'POST',
+// 		json: messageData
+// 	}, function (error, response, body) {
+// 		if (!error && response.statusCode == 200) {
+// 	  		if(callback != null) callback(null)
+// 		} else {
+// 	  	if(callback != null) callback(error)
+// 		}
+// 	});
+// }
 
-	request({
-		uri: 'https://slack.com/api/chat.postMessage',
-		qs: { access_token: token },
-		method: 'POST',
-		json: messageData
-	}, function (error, response, body) {
-		if (!error && response.statusCode == 200) {
-	  		if(callback != null) callback(null)
-		} else {
-	  	if(callback != null) callback(error)
-		}
-	});
-}
-
-module.exports = router;
+// module.exports = router;

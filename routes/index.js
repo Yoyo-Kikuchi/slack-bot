@@ -21,8 +21,8 @@ router.post('/', async (req, res, next) => {
 
 async function callSendAPI(message) {
 	const messageData = {
-		"channel": message.channel,
-		"text": message.text
+		"channel": message.event.channel,
+		"text": message.event.text
 	}
 
 	return await request({

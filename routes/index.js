@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router();
+var router = express.Router()
 const request = require('request')
 const bodyParser = require('body-parser')
 
@@ -33,4 +33,4 @@ router.post('/', function(req, res, next) {
 // 	});
 // }
 
-// module.exports = router;
+module.exports = router;

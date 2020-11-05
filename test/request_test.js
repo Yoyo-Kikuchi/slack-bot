@@ -4,16 +4,12 @@ const bodyParser = require('body-parser')
 require('dotenv').config()
 
 
-const message = {
-	chaneel: "",
-	text: "",
-}
-
-
 async function callSendAPI() {
 	const messageData = {
-		"channel": message.chaneel,
-		"text": message.text
+		"channel": process.env.CHANEEL,
+		"text": "TEST_MESSAGE",
+		"as_user": false,
+		"username": "TEST BOT"
 	}
 
 	return await request({
@@ -23,9 +19,12 @@ async function callSendAPI() {
     	},
 		method: 'POST',
 		json: messageData
+	}).then(function (repos) {
+		console.log(repos)
+	}).catch(function (err) {
+		console.log(err)
 	});
 }
 
 
-const response = callSendAPI()
-console.log(response)
+callSendAPI()
